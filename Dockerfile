@@ -24,5 +24,3 @@ WORKDIR	$JMETER_HOME
 
 RUN sed 's/#server.rmi.ssl.disable=false/server.rmi.ssl.disable=true/g' ./bin/jmeter.properties > ./bin/jmeter_temp.properties
 RUN mv ./bin/jmeter_temp.properties ./bin/jmeter.properties
-
-ENTRYPOINT ["jmeter","$@"]
