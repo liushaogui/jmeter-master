@@ -20,6 +20,8 @@ RUN mkdir -p /tmp/dependencies  \
 # Set global PATH such that "jmeter" command is found
 ENV PATH $PATH:$JMETER_BIN
 
+VOLUME ["/data"]
+
 WORKDIR	$JMETER_HOME
 
 RUN sed 's/#server.rmi.ssl.disable=false/server.rmi.ssl.disable=true/g' ./bin/jmeter.properties > ./bin/jmeter_temp.properties
