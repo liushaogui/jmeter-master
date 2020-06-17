@@ -27,6 +27,7 @@ ENV PATH $PATH:$JMETER_HOME/bin
 VOLUME ["/data"]
 
 WORKDIR	$JMETER_HOME
-
+beanshell.server.port=9000
 RUN sed 's/#server.rmi.ssl.disable=false/server.rmi.ssl.disable=true/g' ./bin/jmeter.properties > ./bin/jmeter_temp.properties
-RUN mv ./bin/jmeter_temp.properties ./bin/jmeter.properties
+RUN sed 's/#beanshell.server.port=9000/beanshell.server.port=9000/g' ./bin/jmeter_temp.properties > ./bin/jmeter.properties
+RUN rm ./bin/jmeter_temp.properties
