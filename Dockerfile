@@ -23,7 +23,7 @@ RUN mkdir -p /tmp/dependencies  \
 
 # Set global PATH such that "jmeter" command is found
 
-COPY update_qps.bsh $JMETER_HOME
+COPY update_parameter.bsh $JMETER_HOME
 
 ENV PATH $PATH:$JMETER_HOME/bin
 
