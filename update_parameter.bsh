@@ -1,3 +1,4 @@
+import org.apache.jmeter.util.JMeterUtils;
   
 getprop(p){// get a JMeter property
 return JMeterUtils.getPropDefault(p,"");
